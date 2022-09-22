@@ -1,0 +1,350 @@
+.App {
+  max-width: 100%;
+}
+
+.header {
+  background-color: #f8f9fa;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.buttonHome {
+  width: 64px;
+  height: 40px;
+  background-color: #e9ecef;
+  border: 1.4px solid #e9ecef;
+  border-radius: 8px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.buttonHome:hover {
+  background-color: #868e96;
+  cursor: pointer;
+  color: white;
+}
+
+.divMain {
+  margin: 0 200px;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  flex-wrap: wrap;
+  font-family: Nunito;
+  padding: 50px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 345px;
+  height: 351px;
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 25px;
+  gap: 30px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input {
+  background: #f8f9fa;
+  border: none;
+  width: 315px;
+  height: 52px;
+  color: #868e96;
+  border-radius: 8px;
+}
+
+input:hover {
+  cursor: pointer;
+  border: 1.2px solid #212529;
+}
+
+.inputDescription {
+  width: 280px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.containerValues {
+  display: flex;
+  gap: 100px;
+}
+
+.divValue {
+  display: flex;
+  flex-direction: column;
+}
+
+.divInput {
+  display: flex;
+  width: 80px;
+  height: 30px;
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 8px;
+  align-items: center;
+  color: #343a40;
+}
+
+.inputValue {
+  width: 60px;
+  height: 30px;
+}
+
+.divSelect {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 15px;
+}
+
+.selectOptions {
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 8px;
+  width: 85px;
+  height: 30px;
+  color: #343a40;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.selectOptions:hover {
+  cursor: pointer;
+  border: 1.2px solid #212529;
+}
+
+.buttonInsertValue {
+  background-color: #fd377e;
+  border: 2px solid #fd377e;
+  border-radius: 8px;
+  color: white;
+  width: 277px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 13px;
+}
+
+.buttonInsertValue:hover {
+  cursor: pointer;
+  background: #e34981;
+}
+
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  width: 345px;
+  height: 120px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.totalCost {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.resultTotal {
+  color: #fd377e;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+span {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.listButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.buttonAll {
+  width: 72px;
+  height: 40px;
+  background-color: #fd377e;
+  color: white;
+  border: 1.4px solid #fd377e;
+  border-radius: 8px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.buttonAll:hover {
+  cursor: pointer;
+}
+
+.buttonIn {
+  width: 72px;
+  height: 40px;
+  background-color: #e9ecef;
+  color: #343a40;
+  border: 1.4px solid #e9ecef;
+  border-radius: 8px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.buttonIn:hover {
+  background-color: #868e96;
+  cursor: pointer;
+  color: white;
+}
+
+.buttonIn:active {
+  background-color: #fd377e;
+}
+
+.buttonOut {
+  width: 72px;
+  height: 40px;
+  background-color: #e9ecef;
+  color: #343a40;
+  border: 1.4px solid #e9ecef;
+  border-radius: 8px;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.buttonOut:hover {
+  background-color: #868e96;
+  cursor: pointer;
+  color: white;
+}
+
+.buttonOut:active {
+  background-color: #fd377e;
+}
+
+.divCards {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.noCards {
+  margin-top: 20px;
+  max-width: 380px;
+}
+
+.loading {
+  width: 100%;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  width: 380px;
+  height: 100px;
+  padding: 10px;
+  border-left: #e9ecef solid 7px;
+  margin-bottom: 12px;
+}
+
+.cardList:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+}
+
+.green {
+  border-color: #03b898;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardValue {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardRight {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteCard {
+  background-color: #f8f9fa;
+  border: none;
+}
+
+.transactionValue {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    margin: 0 200px;
+  }
+
+  .divMain {
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .divCards {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .listHeader {
+    margin-top: 0px;
+  }
+
+  .listContainer {
+    width: 500px;
+  }
+
+  .cardList {
+    width: 480px;
+  }
+
+  .noCards {
+    margin-top: 20px;
+    max-width: 500px;
+  }
+}
