@@ -3,16 +3,7 @@ import noCard from "../../noCard.svg";
 import { useState } from "react";
 
 const List = ({ listTransactions, setListTransactions, handleDelete }) => {
-  const [filtered, setFiltered] = useState(false);
-  const [listFiltered, setListFiltered] = useState([...listTransactions]);
-
-  function handleFilter(botao) {
-    botao !== "todos" ? setFiltered(true) : setFiltered(false);
-
-    setListFiltered(
-      listTransactions.filter((transaction) => transaction.select === botao)
-    );
-  }
+  const [listFiltered, setListFiltered] = useState("todos");
 
   return (
     <>
@@ -24,54 +15,78 @@ const List = ({ listTransactions, setListTransactions, handleDelete }) => {
               <button
                 value={"todos"}
                 className="buttonAll"
-                onClick={() => handleFilter("todos")}
+                onClick={() => setListFiltered("todos")}
               >
                 Todos
               </button>
               <button
                 value={"Entrada"}
                 className="buttonIn"
-                onClick={() => handleFilter("Entrada")}
+                onClick={() => setListFiltered("Entrada")}
               >
                 Entradas
               </button>
               <button
                 value={"Despesa"}
                 className="buttonOut"
-                onClick={() => handleFilter("Despesa")}
+                onClick={() => setListFiltered("Despesa")}
               >
                 Despesas
               </button>
             </div>
           </div>
         </div>
+
         {listTransactions.length === 0 ? (
           <div className="noCards">
             <h2>Você ainda não possui nenhum lançamento</h2>
             <img className="loading" src={noCard} alt="Não há lançamentos" />
           </div>
-        ) : filtered === false ? (
-          listTransactions.map((transaction, index) => (
-            <div className="divCards" key={index}>
-              <Card
-                transaction={transaction}
-                setListTransactions={setListTransactions}
-                listTransactions={listTransactions}
-                handleDelete={handleDelete}
-              />
-            </div>
-          ))
+        ) : listFiltered === "todos" ? (
+          <>
+            {listTransactions.map((transaction, index) => (
+              <div className="divCards" key={index}>
+                <Card
+                  transaction={transaction}
+                  setListTransactions={setListTransactions}
+                  listTransactions={listTransactions}
+                  handleDelete={handleDelete}
+                />
+              </div>
+            ))}
+          </>
+        ) : listFiltered === "Entrada" ? (
+          <>
+            {listTransactions.map(
+              (transaction, index) =>
+                transaction.select === "Entrada" && (
+                  <div className="divCards" key={index}>
+                    <Card
+                      transaction={transaction}
+                      setListTransactions={setListTransactions}
+                      listTransactions={listTransactions}
+                      handleDelete={handleDelete}
+                    />
+                  </div>
+                )
+            )}
+          </>
         ) : (
-          listFiltered.map((transaction, index) => (
-            <div className="divCards" key={index}>
-              <Card
-                transaction={transaction}
-                setListTransactions={setListTransactions}
-                listTransactions={listTransactions}
-                handleDelete={handleDelete}
-              />
-            </div>
-          ))
+          <>
+            {listTransactions.map(
+              (transaction, index) =>
+                transaction.select === "Despesa" && (
+                  <div className="divCards" key={index}>
+                    <Card
+                      transaction={transaction}
+                      setListTransactions={setListTransactions}
+                      listTransactions={listTransactions}
+                      handleDelete={handleDelete}
+                    />
+                  </div>
+                )
+            )}{" "}
+          </>
         )}
       </div>
     </>

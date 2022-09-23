@@ -1,5 +1,5 @@
 import { useState } from "react";
-const Form = ({ listTransactions, setListTransactions }) => {
+const Form = ({ setListTransactions }) => {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
   const [select, setSelect] = useState("");
@@ -20,6 +20,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
       <div className="divDescription">
         <p>Descrição</p>
         <input
+          value={description}
           className="inputDescription"
           type="text"
           placeholder="Digite aqui sua descrição"
@@ -33,6 +34,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
           <p>Valor</p>
           <div className="divInput">
             <input
+              value={value}
               className="inputValue"
               type="number"
               placeholder="1"
@@ -45,6 +47,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
         <div className="divSelect">
           <label>Tipo de valor:</label>
           <select
+            value={select}
             className="selectOptions"
             onChange={(event) => setSelect(event.target.value)}
           >
